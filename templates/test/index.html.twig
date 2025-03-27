@@ -1,0 +1,314 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+<!-- mon menu -->
+  <div class="bg-color">
+  <div class="bg-image">
+    <!--nav bar-->
+    <div class="overlay"></div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark text-white justify-content-center fixed-top">
+      <!-- display logo -->
+      <div class="d-flex justify-content-evenly container">
+        <a class="navbar-brand" href="#">
+          <img src="{{ asset('/images/MyLibrairy_logo.jpg')}}" class="rounded-circle d-flex justify-content-center" alt="Logo">
+        </a>
+        <!-- Menu button -->
+        <div class="row text-center container-fluid d-flex justify-content-center">
+          <div class="btn-group">
+          <button type="button" class="btn btn-dark text-white">Accueil</button>
+          <div class="btn-group">
+            <!-- dropdown menu-->
+            <button type="button" class="btn btn-dark text-white dropdown-toggle " data-bs-toggle="dropdown"> Les news </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item " href="#">Nouveaux auteurs</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Sorties lecture</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Avis lectures</a>
+              </li>
+            </ul>
+          </div>
+          <button type="button" class="btn btn-dark text-white">FAQ</button>
+          <button type="button" class="btn btn-dark text-white">Contact</button>
+          <!-- login button -->
+          <form class="d-flex" role="login">
+            <input class="form-control me-2 d-none d-md-block" type="login" placeholder="login" aria-label="Login">
+            <button class="btn btn-outline-light d-none d-md-block" type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+ 
+  <!-- carrousel -->
+  <div class="container text-center">
+    <div class="row d-flex flex-column my-4">
+      <div class="col-6"></div>
+      <div class="col my-2">
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+          <!-- Indicators/dots -->
+            <div class="carousel-indicators ">
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+              <div class="carousel-item active "> <!-- img 1-->
+                <img src="{{ asset('/images/jeunesse.jpeg')}}" alt="Lecture Jeunesse" class="d-block mx-auto rounded" style="width:50%">
+                <div class="carousel-caption">
+                  <h3>
+                    <a href="https://example.com/lecture-jeunesse" target="_blank" class="fw-bold" style=" color: inherit;"> Lecture Jeunesse</a>
+                  </h3>
+                </div>
+              </div>
+              <div class="carousel-item  "> <!-- img 2-->
+                <img src="{{ asset('/images/book4.jpeg')}} " alt="Chicago" class="d-block mx-auto rounded" style="width:50%">
+                <div class="carousel-caption">
+                  <h3>
+                    <a href="https://example.com/sortie-litteraires" target="_blank" class="fw-bold" style="color: inherit;"> Les sorties littéraires</a>
+                  </h3>
+                </div>
+              </div>
+              <div class="carousel-item "> <!-- img 3-->
+                <img src="{{ asset('/images/actu.jpeg')}} " alt="lecture bien-être" class="d-block mx-auto rounded " style="width:40%">
+                <div class="carousel-caption">
+                  <h3>
+                    <a href="https://example.com/tendances" target="_blank" class="fw-bold" style="color: inherit;"> Les tendances du moment </a>
+                  </h3>
+                </div>
+              </div>
+            </div> <!--fin carroussel-->
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+
+          <!-- button Action -->
+          <div class="text-center my-5">
+            <a href="#inscription" class="btn btn-warning btn-lg px-4 py-2 blinking-btn">Rejoignez-nous maintenant ! 🥰</a>
+          </div>
+          <!-- Description Section -->
+          <div class="container-fluid mt-3 position-relative p-0 d-flex justify-content-center">
+            <div class="mx-auto text-center my-4 p-4 rounded border border-dark bg-dark bg-opacity-25" style="max-width: 600px;">
+              <h3 class="text-capitalizegit status">Découvre MyLibrairy !</h3>
+              <p class="fw-bold fs-5">Consectetur occaecat irure non voluptate esse aliquip eiusmod cupidatat exercitation nostrud sint consectetur. Veniam consectetur et nulla quis proident fugiat nostrud quis in do aliqua amet. Fugiat enim aliqua amet voluptate enim ullamco veniam duis reprehenderit adipisicing adipisicing qui aute.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+  </div>
+</div><!-- end -->
+
+  <!--rubrique mes auteurs  -->
+<div class="d-flex justify-content-center"> 
+  <h2 class="d-flex justify-content-center mt-5 mb-5 rounded border border-dark rounded bg-dark bg-opacity-25 text-capitalize" style="width: 30%;">mes auteurs</h2>
+</div>
+
+<!-- grille auteurs  -->
+<div class="container">
+  <div class="row ">
+    <div class="d-flex justify-content-evenly"> 
+      <div class="col-md-2 flex flex-column text-center"> <!-- col 1-->
+        <img src="{{ asset('/images/LorisLanda.jpeg')}} " class="img-fluid mb-3 rounded-circle" alt="picture Loris Landa">
+        <h3><a href="https://example.com/loris-landa" target="_blank"> Loris Landa</a> </h3>
+        <img src="{{ asset('/images/colette.jpeg')}} " class="img-fluid mb-3 rounded-circle" alt="picture Colette">
+        <h3><a href="https://example.com/colette" target="_blank">  Colette </a> </h3>
+      </div>
+      
+      <!-- image central (woman) -->
+      <div class="col-md-4 flex flex-column "> <!--  col 2-->
+        <img src="{{ asset('/images/woman_fond.png')}} " class="img-fluid rounded-circle mb-3 d-none d-md-block" alt="woman">
+      </div>
+      
+      <div class="col-md-2 flex flex-column text-center"><!-- col 3-->
+        <img src=" {{ asset('/images/quentin_poul.jpeg')}} " class="img-fluid rounded-circle mb-3" alt="picture Quentin Poull">
+        <h3><a href="https://example.com/quentin-poul" target="_blank">  Quentin Poul</a></h3>
+        <img src=" {{ asset('/images/michelleLoak.jpeg')}} " class="img-fluid mb-3 rounded-circle" alt="picture Michelle Loak">
+        <h3><a href="https://example.com/michelle-loak" target="_blank">  Michelle Loak</a> </h3>
+      </div>
+    </div>
+  </div>
+</div> <!--fin de la grille auteurs-->
+
+
+<img src=" {{ asset('/images/sep_2.png')}} " alt="separateur" class="d-block mx-auto" style="width:30%">
+<!-- presentation des salons -->
+<div class="d-flex justify-content-center ">
+  <h2 class="d-flex justify-content-center mt-5 mb-5 rounded border border-dark rounded bg-dark bg-opacity-25 text-capitalize" style="width:30%"> agenda du Salon du livre</h2>
+</div>
+<!-- debut de la grille -->
+<div class="container text-center">
+    <div class="row">
+      <div class="col"> <!-- first col -->
+        <h2 class="d-flex justify-content-center text-capitalize"> <a href="#" target="_blank"> salon de Marseille </a> </h2>
+        <p class="text-center"> Le 25 juin 2025</p>
+        <p class="text-center fs-4">Pariatur et excepteur qui esse nostrud proident aliquip ea qui velit adipisicing sint minim. Elit pariatur quis cillum esse exercitation aute id irure irure amet laboris anim. Anim mollit enim labore commodo et incididunt nisi dolore et nulla reprehenderit incididunt do. Proident labore mollit sint nulla minim in quis reprehenderit.</p>
+      </div>
+    
+      <div class="col"><!--  col 2-->
+        <h2 class="d-flex justify-content-center text-capitalize"> <a href="#" target="_blank"> salon de Paris </a></h2>
+        <p class="text-center"> Le 18 novembre 2025</p>
+        <p class="text-center fs-4">laborum eu exercitation tempor ea commodo laboris. Cupidatat cupidatat tempor nostrud magna adipisicing incididunt non aute exercitation ipsum ea non quis amet. Et exercitation anim in ut consectetur mollit nulla laborum cillum sint velit reprehenderit duis. Fugiat irure ex deserunt sunt consequat amet esse nostrud tempor ad do dolor laboris. Irure eiusmod mollit eiusmod est in exercitation adipisicing commodo ad.</p>
+      </div>
+  
+      <div class="col"><!-- col 3 -->
+        <h2 class="d-flex justify-content-center text-capitalize"> <a href="#" target="_blank"> salon de Grenoble </a></h2>
+        <p class="text-center"> Le 4 mars 2026</p>
+        <p class="text-center fs-4">Aliquip dolor cillum deserunt et. Qui enim sint occaecat quis velit Lorem. Dolor veniam non velit eiusmod. Pariatur consectetur sunt aliqua officia Lorem nisi voluptate qui anim commodo quis adipisicing in. Ipsum do aliqua elit laboris anim. Enim culpa laboris excepteur amet cupidatat exercitation consectetur dolore ad ullamco id anim mollit. Voluptate dolore sunt duis in anim eu irure ut deserunt velit quis laboris Lorem.</p>
+      </div>
+    </div>
+</div> <!--fin de la grille-->
+
+<img src="{{ asset('/images/sep_2.png')}}" alt="separateur" class="d-block mx-auto" style="width:30%">
+<!-- table des recherches titres et auteurs -->
+<h2 class="d-flex justify-content-center mt-5 mb-5">Trouvez votre auteur ou livre préféré</h2>
+
+<div class="container text-center">
+  <div class="row row-cols-auto d-flex flex-column">
+    <div class="container text-center">
+      <div class="row">
+          <div class="col" id="search_auteur">  <!-- first col -->
+            <form class="d-flex">
+                  <p  class="w-100 fw-bold"> Trouver votre auteur : </p>      
+                  <input class="form-control me-2 flex-grow-1" type="search" placeholder="Le nom de votre auteur..." aria-label="Search">
+                  <button class="btn btn-outline-primary" type="submit">Rechercher</button>
+            </form>   
+          </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row row-cols-auto  ">
+          <div class="col">
+            <form class="d-flex">
+                  <p  class="w-100 fw-bold  my-3"> Trouver votre livre : </p>      
+                  <input class="form-control me-2 flex-grow-1 my-3" type="search" placeholder="Le titre de votre livre..." aria-label="Search">
+                  <button class="btn btn-outline-primary my-3" type="submit">Rechercher</button>
+            </form>   
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<img src="{{ asset('/images/sep_2.png')}}" alt="separateur" class="d-block mx-auto" style="width:30%">
+<!-- display acordeon FAQ -->
+<div class="container my-5 bg-faq">
+  <h2 class="text-center mb-4">FAQ - Foire Aux Questions</h2>
+  <div class="accordion" id="faqAccordion">
+
+    <!-- Question 1 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="question1">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#answer1" aria-expanded="true" aria-controls="answer1">
+          Comment puis-je créer un compte ?
+        </button>
+      </h2>
+      <div id="answer1" class="accordion-collapse collapse show" aria-labelledby="question1" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Pour créer un compte, cliquez sur le bouton "S'inscrire" en haut à droite et suivez les instructions.
+        </div>
+      </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="question2">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer2" aria-expanded="false" aria-controls="answer2">
+          Puis-je noter et commenter un livre ?
+        </button>
+      </h2>
+      <div id="answer2" class="accordion-collapse collapse" aria-labelledby="question2" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Oui !😍 Vous pouvez attribuer une note et laisser un commentaire sur un livre en accédant à sa fiche et en cliquant sur "Évaluer ce livre".
+        </div>
+      </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="question3">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer3" aria-expanded="false" aria-controls="answer3">
+          Comment ajouter un livre à ma bibliothèque ?
+        </button>
+      </h2>
+      <div id="answer3" class="accordion-collapse collapse" aria-labelledby="question3" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Pour ajouter un livre, cliquez sur "Ajouter un livre" dans votre espace personnel, puis saisissez le titre, l’auteur et d'autres informations pertinentes.
+        </div>
+      </div>
+    </div>
+      <!-- Question 5 -->
+      <div class="accordion-item">
+      <h2 class="accordion-header" id="question5">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer5" aria-expanded="false" aria-controls="answer5">
+          Est-il possible de synchroniser ma bibliothèque avec d'autres appareils ?
+        </button>
+      </h2>
+      <div id="answer5" class="accordion-collapse collapse" aria-labelledby="question5" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Oui,👍 votre bibliothèque est enregistrée sur votre compte MyLibrary et accessible depuis n'importe quel appareil connecté.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<img src="{{ asset('/images/sep_2.png')}}" alt="separateur" class="d-block mx-auto" style="width:30%">
+</div>   
+<footer class="bg-dark text-white py-4">
+    <div> 
+    <div class="container">
+      <div class="row">
+  
+        <!-- Navigation des liens -->
+        <div class="col text-center text-md-start">
+        <img src="{{ asset('/images/MyLibrairy_logo.jpg ')}}" class="img-fluid rounded-circle mb-6 d-none d-md-block" style="width:50%" alt="woman">
+        </div>
+        
+     
+  
+        <!-- Informations sur le site -->
+        <div class="col text-center">
+        <h5 class="card-title">localisation</h5>
+          <p class="card-text">1 cours Jean Jaures 75000 Paris</p>
+          <a href="mailto:contact@library.com" class="btn btn-primary fs-5">
+            Une question ? Une remarque ? Contactez-nous !
+          </a>
+        </div>
+  
+        <!-- Réseaux sociaux -->
+        <div class="col text-center text-md-end mt-3 mt-md-0">
+          <h5>Suivez-nous</h5>
+          <a href="https://www.facebook/mylibrairy" class=" text-white me-2"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="https://www.instagram/mylibrairy" class="text-white me-2"><i class="fab fa-instagram fa-lg"></i></a>
+          <a href="https://www.linkedin/mylibrairy" class="text-white me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+        </div>
+  <!-- Copyright en bas -->
+  
+    <div class="container">
+      <div class="row flex-column">
+      <div class=" mt-3">
+          <p class="mb-0">&copy; 2025 - Tous droits réservés. <a href="#" class="text-danger">Mentions légales</a></p>
+      </div>
+      </div>
+    </div>
+  
+  
+  <!-- script js  -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+  </html>
+{% endblock %}

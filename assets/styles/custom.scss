@@ -1,0 +1,107 @@
+
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+.bg-color {
+    background-color: #F2D5BB; /* Couleur de fond bleu clair */
+    color: black
+  }
+  
+  .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+  }
+  
+  .carousel-item img {
+    opacity: 0.7;
+    margin-top: 90px; 
+  }
+  
+  /* image de fond  */
+  .bg-image {
+      background-image: url('/assets/styles/images/fond_book.jpg'); 
+      background-size: cover; 
+      position: relative; 
+    }
+    
+  .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.3); 
+  }
+  
+  .border-success {
+      --bs-border-opacity: 3;
+      border-color: rgba(var(--bs-success-rgb), var(--bs-border-opacity)) !important;
+    }
+  
+  a {
+      text-decoration: none;
+      color: inherit; 
+    }
+    
+  /* display carroussel image */
+  .navbar-brand img {
+    max-height: 80px; 
+    width: auto;
+  }
+  
+  .accordion-button {
+    background-color: #F2D5BB; 
+    color: black;
+  }
+  
+  /* display arrow  */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: invert(0) brightness(0); 
+    width: 50px; 
+    height: 50px;
+  }
+  /* display arrow  */
+  .carousel-control-prev-icon::before,
+  .carousel-control-next-icon::before {
+    font-weight: bold;
+  }
+  
+  /* button action  */
+  .btn-primary:hover {
+    background-color: #0056b3;  
+    transform: scale(1.1);  
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* clignoter le bouton */
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .blinking-btn {
+    animation: blink 1s infinite;  
+    animation-timing-function: ease-in-out;
+  }
+  
+  .btn-warning {
+    background-color: #ffcc00;
+    color: #D94625;
+    font-weight: bold;
+    border: none;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e6b800;
+  }
+  
